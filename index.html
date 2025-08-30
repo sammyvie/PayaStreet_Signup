@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paya Street</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .centered {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #026769;
+    }
+
+    .logo {
+      max-width: 300px;
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.6s ease-out;
+    }
+  </style>
+</head>
+<body class="centered">
+  <a href="signup.html" id="logoLink">
+    <img src="./img/paya.png" alt="Paya Street Logo" class="logo">
+  </a>
+
+  <script>
+    const logoLink = document.getElementById('logoLink');
+    logoLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.body.classList.add('fade-out');
+
+      setTimeout(() => {
+        window.location.href = logoLink.getAttribute('href');
+      }, 600); // Match transition time
+    });
+  </script>
+</body>
+</html>
+
